@@ -46,6 +46,8 @@ var _Layout = require('../components/Layout');
 
 var _Layout2 = _interopRequireDefault(_Layout);
 
+var _routes = require('../routes');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _jsxFileName = 'D:\\kickstart\\pages\\index.js?entry';
@@ -70,19 +72,23 @@ var CampaignIndex = function (_Component) {
             var items = this.props.campaigns.map(function (address) {
                 return {
                     header: address,
-                    description: _react2.default.createElement('a', {
+                    description: _react2.default.createElement(_routes.Link, { route: '/campaigns/' + address, __source: {
+                            fileName: _jsxFileName,
+                            lineNumber: 21
+                        }
+                    }, _react2.default.createElement('a', {
                         __source: {
                             fileName: _jsxFileName,
-                            lineNumber: 19
+                            lineNumber: 21
                         }
-                    }, 'View Campaign'),
+                    }, 'View Campaign')),
                     fluid: true
                 };
             });
 
             return _react2.default.createElement(_semanticUiReact.Card.Group, { items: items, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 24
+                    lineNumber: 26
                 }
             });
         }
@@ -92,23 +98,32 @@ var CampaignIndex = function (_Component) {
             return _react2.default.createElement(_Layout2.default, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 28
+                    lineNumber: 30
                 }
             }, _react2.default.createElement('div', {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 29
+                    lineNumber: 31
                 }
             }, _react2.default.createElement('h3', {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 30
-                }
-            }, 'Open Campaigns'), _react2.default.createElement(_semanticUiReact.Button, { floated: 'right', content: 'Create Campaign', icon: 'add circle', primary: true, __source: {
-                    fileName: _jsxFileName,
                     lineNumber: 32
                 }
-            }), this.renderCampaigns()));
+            }, 'Open Campaigns'), _react2.default.createElement(_routes.Link, { route: '/campaigns/new', __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 33
+                }
+            }, _react2.default.createElement('a', {
+                __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 34
+                }
+            }, _react2.default.createElement(_semanticUiReact.Button, { floated: 'right', content: 'Create Campaign', icon: 'add circle', primary: true, __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 35
+                }
+            }))), this.renderCampaigns()));
         }
     }], [{
         key: 'getInitialProps',
@@ -146,4 +161,4 @@ var CampaignIndex = function (_Component) {
 }(_react.Component);
 
 exports.default = CampaignIndex;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzXFxpbmRleC5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsIkNvbXBvbmVudCIsImZhY3RvcnkiLCJDYXJkIiwiQnV0dG9uIiwiTGF5b3V0IiwiQ2FtcGFpZ25JbmRleCIsIml0ZW1zIiwicHJvcHMiLCJjYW1wYWlnbnMiLCJtYXAiLCJoZWFkZXIiLCJhZGRyZXNzIiwiZGVzY3JpcHRpb24iLCJmbHVpZCIsInJlbmRlckNhbXBhaWducyIsIm1ldGhvZHMiLCJnZXREZXBsb3llZENvbXBhaWduIiwiY2FsbCJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLEFBQU8sQUFBUzs7OztBQUNoQixBQUFPLEFBQWE7Ozs7QUFDcEIsQUFBUyxBQUFNOztBQUNmLEFBQU8sQUFBWTs7Ozs7Ozs7O0FBRW5CO0FBQ0E7QUFDQTs7SSxBQUNNOzs7Ozs7Ozs7OzswQ0FNZ0IsQUFDZDtnQkFBTSxhQUFRLEFBQUssTUFBTCxBQUFXLFVBQVgsQUFBcUIsSUFBSSxtQkFBVyxBQUM5Qzs7NEJBQU8sQUFDSyxBQUNSO2lEQUFhLGNBQUE7O3NDQUFBO3dDQUFBO0FBQUE7QUFBQSxxQkFBQSxFQUZWLEFBRVUsQUFDYjsyQkFISixBQUFPLEFBR0ksQUFFZDtBQUxVLEFBQ0g7QUFGUixBQUFjLEFBUWQsYUFSYzs7aURBUVAsQUFBQyxzQkFBRCxBQUFNLFNBQU0sT0FBWixBQUFtQjs4QkFBbkI7Z0NBQVAsQUFBTyxBQUNWO0FBRFU7YUFBQTs7OztpQ0FFRixBQUNMO21DQUNJLEFBQUM7OzhCQUFEO2dDQUFBLEFBQ0E7QUFEQTtBQUFBLGFBQUEsa0JBQ0EsY0FBQTs7OEJBQUE7Z0NBQUEsQUFDQTtBQURBO0FBQUEsK0JBQ0EsY0FBQTs7OEJBQUE7Z0NBQUE7QUFBQTtBQUFBLGVBREEsQUFDQSxBQUVBLG1DQUFBLEFBQUMseUNBQU8sU0FBUixBQUFnQixTQUFRLFNBQXhCLEFBQWdDLG1CQUFrQixNQUFsRCxBQUF1RCxjQUFhLFNBQXBFOzhCQUFBO2dDQUhBLEFBR0EsQUFDQztBQUREO3FCQUxKLEFBQ0ksQUFDQSxBQUlDLEFBQUssQUFJYjs7Ozs7Ozs7Ozs7O3VDQTFCMkIsa0JBQUEsQUFBUSxRQUFSLEFBQWdCLHNCLEFBQWhCLEFBQXNDOztpQ0FBeEQ7QTtpRUFDQyxFQUFFLFcsQUFBRjs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQTRCZixBLEFBL0I0Qjs7a0JBK0I1QixBQUFlIiwiZmlsZSI6ImluZGV4LmpzP2VudHJ5Iiwic291cmNlUm9vdCI6IkQ6L2tpY2tzdGFydCJ9
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzXFxpbmRleC5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsIkNvbXBvbmVudCIsImZhY3RvcnkiLCJDYXJkIiwiQnV0dG9uIiwiTGF5b3V0IiwiTGluayIsIkNhbXBhaWduSW5kZXgiLCJpdGVtcyIsInByb3BzIiwiY2FtcGFpZ25zIiwibWFwIiwiaGVhZGVyIiwiYWRkcmVzcyIsImRlc2NyaXB0aW9uIiwiZmx1aWQiLCJyZW5kZXJDYW1wYWlnbnMiLCJtZXRob2RzIiwiZ2V0RGVwbG95ZWRDb21wYWlnbiIsImNhbGwiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxBQUFPLEFBQVM7Ozs7QUFDaEIsQUFBTyxBQUFhOzs7O0FBQ3BCLEFBQVMsQUFBTTs7QUFDZixBQUFPLEFBQVk7Ozs7QUFDbkIsQUFBUyxBQUFZOzs7Ozs7O0FBRXJCO0FBQ0E7QUFDQTs7SSxBQUNNOzs7Ozs7Ozs7OzswQ0FNZ0IsQUFDZDtnQkFBTSxhQUFRLEFBQUssTUFBTCxBQUFXLFVBQVgsQUFBcUIsSUFBSSxtQkFBVyxBQUM5Qzs7NEJBQU8sQUFDSyxBQUNSO2lEQUNBLEFBQUMsOEJBQUssdUJBQU4sQUFBNEI7c0NBQTVCO3dDQUFBLEFBQXVDO0FBQXZDO3FCQUFBLGtCQUF1QyxjQUFBOztzQ0FBQTt3Q0FBQTtBQUFBO0FBQUEsdUJBSHBDLEFBR0gsQUFBdUMsQUFDdkM7MkJBSkosQUFBTyxBQUlJLEFBRWQ7QUFOVSxBQUNIO0FBRlIsQUFBYyxBQVNkLGFBVGM7O2lEQVNQLEFBQUMsc0JBQUQsQUFBTSxTQUFNLE9BQVosQUFBbUI7OEJBQW5CO2dDQUFQLEFBQU8sQUFDVjtBQURVO2FBQUE7Ozs7aUNBRUYsQUFDTDttQ0FDSSxBQUFDOzs4QkFBRDtnQ0FBQSxBQUNBO0FBREE7QUFBQSxhQUFBLGtCQUNBLGNBQUE7OzhCQUFBO2dDQUFBLEFBQ0E7QUFEQTtBQUFBLCtCQUNBLGNBQUE7OzhCQUFBO2dDQUFBO0FBQUE7QUFBQSxlQURBLEFBQ0EsQUFDQSxtQ0FBQSxBQUFDLDhCQUFLLE9BQU4sQUFBWTs4QkFBWjtnQ0FBQSxBQUNJO0FBREo7K0JBQ0ksY0FBQTs7OEJBQUE7Z0NBQUEsQUFDSjtBQURJO0FBQUEsK0JBQ0osQUFBQyx5Q0FBTyxTQUFSLEFBQWdCLFNBQVEsU0FBeEIsQUFBZ0MsbUJBQWtCLE1BQWxELEFBQXVELGNBQWEsU0FBcEU7OEJBQUE7Z0NBSkEsQUFFQSxBQUNJLEFBQ0osQUFHQztBQUhEO3VCQU5KLEFBQ0ksQUFDQSxBQU9DLEFBQUssQUFJYjs7Ozs7Ozs7Ozs7O3VDQTlCMkIsa0JBQUEsQUFBUSxRQUFSLEFBQWdCLHNCLEFBQWhCLEFBQXNDOztpQ0FBeEQ7QTtpRUFDQyxFQUFFLFcsQUFBRjs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQWdDZixBLEFBbkM0Qjs7a0JBbUM1QixBQUFlIiwiZmlsZSI6ImluZGV4LmpzP2VudHJ5Iiwic291cmNlUm9vdCI6IkQ6L2tpY2tzdGFydCJ9

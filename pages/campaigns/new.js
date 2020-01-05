@@ -3,23 +3,28 @@ import Layout from '../../components/Layout';
 import { Form, Button, Input, Message } from 'semantic-ui-react';
 import web3 from '../../ethereum/web3';
 import factory from '../../ethereum/factory';
+import { Router } from '../../routes';
 
 class CampaignNew extends Component {
     state = {
         minimumContribution: '',
-        errMessage: ''
+        errMessage: '',
+        loading: false
     };
 
     onSubmit = async event => {
         event.preventDefault();
+        this.setState({loading: true, errMessage: ''});
         try {
             const accounts = await web3.eth.getAccounts();
             await factory.methods.createCompaign(this.state.minimumContribution).send({
                 from: accounts[0]
             });
+            Router.pushRoute('/');
         } catch(err) {
             this.setState({errMessage: err.message});
         }
+        this.setState({loading: false});
     }
     render() {
         return (
@@ -33,7 +38,7 @@ class CampaignNew extends Component {
                     />
                 </Form.Field>
                 <Message error header="oops!" content={this.state.errMessage}/>
-                <Button primary>Create!</Button>
+                <Button primary loading={this.state.loading}>Create!</Button>
             </Form>
             </Layout>
         );
